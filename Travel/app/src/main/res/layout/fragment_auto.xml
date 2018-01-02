@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/llAuto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!--<ListView
+        android:id="@+id/lvAuto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>-->
+
+    <RelativeLayout
+        android:id="@+id/rlItemAuto1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@mipmap/auto_speak_bg">
+
+        <ImageView
+
+            android:id="@+id/ivPlay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/play"/>
+
+        <TextView
+            android:id="@+id/tvSpotsName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/ivPlay1"
+            android:text="午门"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:id="@+id/tvUsedTime1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSpotsName1"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/ivPlay1"
+            android:text="时长 3:10"
+            android:textColor="#666666"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="25dp"
+            android:src="@mipmap/where"
+
+            />
+
+        <TextView
+            android:id="@+id/tvDistance1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="35dp"
+            android:text="12.21km"
+            android:textColor="#fff"/>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlItemAuto2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@mipmap/auto_speak_bg">
+
+        <ImageView
+
+            android:id="@+id/ivPlay2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/play"/>
+
+        <TextView
+            android:id="@+id/tvSpotsName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/ivPlay2"
+            android:text="内金水桥"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:id="@+id/tvUsedTime2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSpotsName2"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/ivPlay2"
+            android:text="时长 3:10"
+            android:textColor="#666666"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="25dp"
+            android:src="@mipmap/where"
+
+            />
+
+        <TextView
+            android:id="@+id/tvDistance2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="35dp"
+            android:text="12.21km"
+            android:textColor="#fff"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlItemAuto3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@mipmap/auto_speak_bg">
+
+        <ImageView
+
+            android:id="@+id/ivPlay3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/play"/>
+
+        <TextView
+            android:id="@+id/tvSpotsName3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/ivPlay3"
+            android:text="故宫"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:id="@+id/tvUsedTime3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSpotsName3"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/ivPlay3"
+            android:text="时长 3:10"
+            android:textColor="#666666"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="25dp"
+            android:src="@mipmap/where"
+
+            />
+
+        <TextView
+            android:id="@+id/tvDistance3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="35dp"
+            android:text="12.21km"
+            android:textColor="#fff"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    <ImageView
+        android:id="@+id/ivWeatherIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/weather999"
+        />
+
+    <TextView
+        android:id="@+id/tvCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivWeatherIcon"
+        android:layout_marginLeft="20dp"
+        android:text="北京"
+
+        />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/ivWeatherIcon"
+        android:text="2017.9.5 星期二"/>
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDate"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/ivWeatherIcon"
+        android:layout_toRightOf="@+id/ivWeatherIcon"
+        android:text="15:26"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/tvWeatherState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTime"
+
+        android:layout_toRightOf="@+id/ivWeatherIcon"
+        android:text="晴"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvWeatherState"
+        android:layout_toRightOf="@+id/ivWeatherIcon"
+        android:text="27℃/14℃"/>
+
+    <com.jkkc.travel.view.MyImageView
+        android:id="@+id/mivNavigationPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="matrix"
+        android:src="@mipmap/navigation_and_positioning"/>
+
+    <com.jkkc.travel.view.MyImageView
+        android:id="@+id/mivEmergencyTool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:scaleType="matrix"
+        android:src="@mipmap/emergency_tool"/>
+
+    <com.jkkc.travel.view.MyImageView
+        android:id="@+id/mivNews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mivNavigationPosition"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="matrix"
+        android:src="@mipmap/news"/>
+
+    <com.jkkc.travel.view.MyImageView
+        android:id="@+id/mivInterpretationSpot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mivNavigationPosition"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:scaleType="matrix"
+        android:src="@mipmap/interpretation_of_the_scenic_spot"/>
+
+    <com.jkkc.travel.view.MyImageView
+        android:id="@+id/mivAddressBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mivNews"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="matrix"
+        android:src="@mipmap/the_address_book"/>
+
+    <com.jkkc.travel.view.MyImageView
+        android:id="@+id/mivForeignAssistant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mivInterpretationSpot"
+        android:layout_alignLeft="@+id/mivInterpretationSpot"
+        android:layout_alignStart="@+id/mivInterpretationSpot"
+        android:scaleType="matrix"
+        android:src="@mipmap/foreign_assistant"/>
+
+    <com.jkkc.travel.view.MyImageView
+        android:id="@+id/mivWifiHotspot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/mivForeignAssistant"
+        android:layout_toEndOf="@+id/mivForeignAssistant"
+        android:layout_toRightOf="@+id/mivForeignAssistant"
+        android:scaleType="matrix"
+        android:src="@mipmap/wifi_hotspot"/>
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:text="登录"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvMsgCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tvUserName"/>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvBeiJing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvUserName"
+        android:layout_marginRight="10dp"
+
+        android:text="北京时间"
+        android:textColor="#098bd7"
+        android:textSize="10sp"/>
+
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvBeiJingTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvBeiJing"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:text="15:26"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvBeiJingDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvBeiJingTime"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:text="2017.9.5 星期二"
+        android:textSize="10sp"/>
+
+
+</RelativeLayout>

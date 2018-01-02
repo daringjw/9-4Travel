@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@mipmap/auto_speak_bg">
+
+        <ImageView
+
+            android:id="@+id/ivPlay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/play"/>
+
+        <TextView
+            android:id="@+id/tvSpotsName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/ivPlay1"
+            android:text="景点1"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:id="@+id/tvUsedTime1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSpotsName1"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/ivPlay1"
+
+            android:textColor="#666666"/>
+
+        <ImageView
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="35dp"
+            android:src="@mipmap/where"
+
+            />
+
+        <TextView
+            android:id="@+id/tvDistance1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="35dp"
+            android:text="12.21km"
+            android:textColor="#fff"/>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

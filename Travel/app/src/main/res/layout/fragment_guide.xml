@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@mipmap/guide_bg"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="#66747d"
+        android:gravity="center"
+        android:text="如果没有收到导游讲解消息,请检查是否已经扫码绑定"
+        android:textColor="#fff"
+        android:textSize="12sp"/>
+
+
+    <ListView
+        android:id="@+id/lvGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+
+
+
+
+</LinearLayout>

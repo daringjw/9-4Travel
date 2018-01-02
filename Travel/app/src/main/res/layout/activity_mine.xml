@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#06a1f1">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_arrow_back"
+            android:textColor="#fff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="我的"
+            android:textColor="#fff"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@mipmap/mine_bg"/>
+
+    <RelativeLayout
+        android:id="@+id/rlPersonalMsg"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff">
+
+        <ImageView
+            android:id="@+id/ivPersonalMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+
+            android:src="@mipmap/personal_msg"/>
+
+        <TextView
+            android:id="@+id/tvPersonalMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/ivPersonalMsg"
+            android:text="个人信息"
+
+            android:textColor="#000"
+            android:textSize="18px"/>
+
+        <ImageView
+            android:id="@+id/ivExpandPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/ic_expand_more"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llPersonalMsg"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/ivPersonalMsg"
+        android:background="#f4f4f4"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <TextView
+
+            android:id="@+id/tvMyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="8dp"
+            android:text="姓名:李海峰"
+            android:textColor="#666666"
+            android:textSize="20px"/>
+
+        <TextView
+            android:id="@+id/tvMyNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="6dp"
+            android:text="本机号码:13111112222"
+            android:textColor="#666666"
+            android:textSize="20px"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f4f4f4"></LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlAboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff">
+
+        <ImageView
+            android:id="@+id/ivAboutUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/about_us"/>
+
+        <TextView
+            android:id="@+id/tvAboutUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/ivAboutUs"
+            android:text="关于我们"
+            android:textColor="#000"
+            android:textSize="18px"/>
+
+        <ImageView
+            android:id="@+id/ivExpandAboutUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/ic_expand_more"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llAboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/ivPersonalMsg"
+        android:background="#f4f4f4"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/tvJinKun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="8dp"
+            android:text="安途宝"
+            android:textColor="#666666"
+            android:textSize="20px"/>
+
+        <TextView
+            android:id="@+id/tvCheckVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="8dp"
+            android:text="当前版本"
+            android:textColor="#666666"
+            android:textSize="20px"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f4f4f4"></LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlLogout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff">
+
+        <ImageView
+            android:id="@+id/ivLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/logout"/>
+
+        <TextView
+            android:id="@+id/tvLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/ivLogout"
+            android:text="用户注销"
+            android:textColor="#000"
+            android:textSize="18px"/>
+
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

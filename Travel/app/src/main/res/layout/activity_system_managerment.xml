@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7"
+    android:orientation="vertical"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#018ccd">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:clickable="true"
+            android:src="@mipmap/back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="我的"
+            android:textColor="#fff"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@mipmap/mine_bg"/>
+
+
+    <LinearLayout
+        android:id="@+id/btnSystemReset"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="7dp"
+        android:background="#fff"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/reset"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="6dp"
+            android:text="系统重置"
+            android:textColor="#333333"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnDeleteContacts"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="7dp"
+        android:background="#fff"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/delete_contacts"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="6dp"
+            android:text="删除系统联系人"
+            android:textColor="#333333"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnWipeData"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="7dp"
+        android:background="#fff"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/swipe_database"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="6dp"
+            android:text="清除本应用数据"
+            android:textColor="#333333"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="7dp"
+        android:background="#fff"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/reset"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="6dp"
+            android:text="检查更新"
+            android:textColor="#333333"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

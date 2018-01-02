@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+    >
+
+    <RelativeLayout
+        android:id="@+id/rlTobar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#06a1f1">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_arrow_back"
+            android:textColor="#fff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="wifi热点"
+            android:textColor="#fff"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlTobar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="5分钟内无人连接将关闭热点"/>
+
+    <ImageView
+        android:id="@+id/sweepIV"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+
+    <TextView
+        android:id="@+id/tvSSID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sweepIV"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/tvPwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvSSID"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="5dp"
+        />
+
+
+    <Switch
+        android:id="@+id/btnToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPwd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@mipmap/toggle_bg"
+        android:text="       开启热点"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnToggle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="@mipmap/middle_bg">
+
+        <TextView
+            android:id="@+id/tvConnectPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:text="连接热点的人数："/>
+
+        <TextView
+            android:id="@+id/tvConnectPeopleCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="90dp"
+            android:layout_toRightOf="@+id/tvConnectPeople"
+            android:text="0"/>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvSim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        android:text="手机卡流量已经使用"/>
+
+
+</RelativeLayout>

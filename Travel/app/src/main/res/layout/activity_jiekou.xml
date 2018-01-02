@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnSendAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="报警"/>
+
+    <Button
+        android:id="@+id/btnSendLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="位置上报"/>
+
+
+    <Button
+        android:id="@+id/btnGuideSpeakRe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="导游语音讲解开始消息回复"/>
+
+    <Button
+        android:id="@+id/btnNetRatioRe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网络配置上报频率回复"/>
+
+    <Button
+        android:id="@+id/btnContactsRe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网络配置应急电话回复"/>
+
+
+</LinearLayout>
