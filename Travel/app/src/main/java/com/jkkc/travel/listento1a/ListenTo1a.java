@@ -25,6 +25,7 @@ import android.widget.TextView;
 
 import com.jkkc.travel.R;
 import com.jkkc.travel.sweepcodebindlogin.PrefUtils;
+import com.jkkc.travel.utils.BytesTransUtil;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -205,6 +206,27 @@ public class ListenTo1a extends AppCompatActivity {
         mAudioTrack.stop();
     }
 
+
+    /**
+     * 获取分贝
+     *
+     * @param buffer  语音buffer
+     * @return
+     */
+    private double getDB(byte[] buffer) {
+        long time = System.currentTimeMillis();
+        short[] audioData = BytesTransUtil.getInstance().Bytes2Shorts(buffer);
+        long v = 0;
+        // 将 buffer 内容取出，进行平方和运算
+        for (int i = 0; i < audioData.length; i++) {
+            v += audioData[i] * audioData[i];
+        }
+        // 平方和除以数据总长度，得到音量大小。
+        double mean = v / (double) buffer.length;
+        double volume = 10 * Math.log10(mean);
+        return volume;
+    }
+
     class AudioPlayThread implements Runnable {
         @Override
         public void run() {
@@ -234,6 +256,11 @@ public class ListenTo1a extends AppCompatActivity {
 
                         mAudioTrack.write(dp.getData(), 0, dp.getLength());
 
+                        //获取分贝值
+                        double db = getDB(dp.getData());
+
+
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -246,6 +273,29 @@ public class ListenTo1a extends AppCompatActivity {
             ReceiveDS.close();
         }
     }
+
+
+
+//    public void setVoiceImg(double voivceNum) {
+////        if (isCancel) return;
+//        if (voivceNum >= 0 && voivceNum < 14) {
+//            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce1);
+//        } else if (voivceNum >= 14 && voivceNum < 28) {
+//            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce2);
+//        } else if (voivceNum >= 28 && voivceNum < 42) {
+//            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce3);
+//        } else if (voivceNum >= 42 && voivceNum < 56) {
+//            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce4);
+//        } else if (voivceNum >= 56 && voivceNum < 70) {
+//            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce5);
+//        } else if (voivceNum >= 70 && voivceNum < 84) {
+//            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce6);
+//        } else {
+//            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce7);
+//        }
+//    }
+
+
 
     private void showLog(String msg) {
         Log.w("xxxxx", msg);

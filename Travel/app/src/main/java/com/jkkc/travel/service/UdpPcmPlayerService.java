@@ -10,7 +10,11 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+import com.jkkc.travel.bean.MicBean;
+import com.jkkc.travel.event.MicEvent;
 import com.jkkc.travel.utils.PrefUtils;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -195,6 +199,17 @@ public class UdpPcmPlayerService extends Service {
                             byte[] data = new byte[dp.getLength()];
                             System.arraycopy(dp.getData(), 0, data, 0, dp.getLength());
                             mAudioPlayer.putData(data);
+
+
+                            MicBean micBean = new MicBean();
+                            MicEvent micEvent = new MicEvent();
+                            micEvent.setMicBean(micBean);
+                            micEvent.getMicBean().mic1=data;
+
+                            EventBus.getDefault().post(micEvent);
+
+
+
 
                         } else if (play_state == PLAY_STATE.STOP) {
                             mAudioPlayer.isWorking = false;

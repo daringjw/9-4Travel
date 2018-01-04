@@ -25,11 +25,17 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.jkkc.travel.R;
-import com.jkkc.travel.UI.HomeActivity0;
+import com.jkkc.travel.UI.HomeActivity;
+import com.jkkc.travel.event.MicEvent;
 import com.jkkc.travel.service.UdpPcmPlayerService;
 import com.jkkc.travel.sweepcodebindlogin.PrefUtils;
 import com.jkkc.travel.util.WifiAutoConnectManager;
+import com.jkkc.travel.utils.BytesTransUtil;
 import com.umeng.analytics.MobclickAgent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.lang.reflect.Method;
 import java.util.List;
@@ -192,12 +198,62 @@ public class GuideSpeak extends Activity {
         return wifiLock;
     }
 
+    /**
+     * 获取分贝
+     *
+     * @param buffer 语音buffer
+     * @return
+     */
+    private double getDB(byte[] buffer) {
+        long time = System.currentTimeMillis();
+        short[] audioData = BytesTransUtil.getInstance().Bytes2Shorts(buffer);
+        long v = 0;
+        // 将 buffer 内容取出，进行平方和运算
+        for (int i = 0; i < audioData.length; i++) {
+            v += audioData[i] * audioData[i];
+        }
+        // 平方和除以数据总长度，得到音量大小。
+        double mean = v / (double) buffer.length;
+        double volume = 10 * Math.log10(mean);
+        return volume;
+    }
+
+
+    public void setVoiceImg(double voivceNum) {
+//        if (isCancel) return;
+        if (voivceNum >= 0 && voivceNum < 14) {
+            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce1);
+        } else if (voivceNum >= 14 && voivceNum < 28) {
+            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce2);
+        } else if (voivceNum >= 28 && voivceNum < 42) {
+            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce3);
+        } else if (voivceNum >= 42 && voivceNum < 56) {
+            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce4);
+        } else if (voivceNum >= 56 && voivceNum < 70) {
+            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce5);
+        } else if (voivceNum >= 70 && voivceNum < 84) {
+            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce6);
+        } else {
+            imgDialogVoicechange.setImageResource(R.mipmap.img_dialog_vioce7);
+        }
+    }
+
+
+
+
+    ImageView imgDialogVoicechange;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_guide_speak);
         ButterKnife.bind(this);
+
+        EventBus.getDefault().register(this);//订阅
+
+        imgDialogVoicechange = (ImageView) findViewById(R.id.img_dialog_voicechange);
+
 
         mHandler = new Handler(); // 创建Handler
 
@@ -271,6 +327,8 @@ public class GuideSpeak extends Activity {
                 mUdpPcmPlayerService = binder.getService();
                 mUdpPcmPlayerService.start();
                 mUdpPcmPlayerService.play();
+
+
             }
 
             @Override
@@ -298,6 +356,19 @@ public class GuideSpeak extends Activity {
     }
 
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMicRefresh(MicEvent event) {
+
+        byte[] mic1 = event.getMicBean().mic1;
+        // 更新
+        double db = getDB(mic1);
+        Log.d("nima", db + "");
+        setVoiceImg(db);
+
+
+    }
+
+
     /**
      * 判断wifi的锁是否持有
      *
@@ -311,7 +382,9 @@ public class GuideSpeak extends Activity {
      * 加上锁
      */
     public void lockWifi() {
+
         wifiLock.acquire();
+
     }
 
     private Handler mHandler; // 用于子线程发送更新UI的线程消息到主线程
@@ -321,7 +394,7 @@ public class GuideSpeak extends Activity {
         public void run() {
             System.out.println("xxxxx 导游讲解服务已经停止");
             Toast.makeText(getApplicationContext(), "导游讲解服务已经停止", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(getApplicationContext(), HomeActivity0.class));
+            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
             finish();
 
         }

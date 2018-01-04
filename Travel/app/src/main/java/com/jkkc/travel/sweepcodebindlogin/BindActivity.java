@@ -513,7 +513,7 @@ public class BindActivity extends AppCompatActivity {
 
             }
 
-            setWifiApEnabled(true);
+//            setWifiApEnabled(true);
             mTvSSID.setText("wifi账号=" + ssid);
             mTvPWD.setText("wifi密码=" + pwd);
             PrefUtils.setBoolean(getApplicationContext(), "ApOpen", true);
@@ -805,6 +805,7 @@ public class BindActivity extends AppCompatActivity {
 
         //// TODO: 2017/9/21
         startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+        finish();
 
 
         //检查网络
