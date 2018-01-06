@@ -59,6 +59,7 @@ import com.jkkc.travel.bean.UpdateInfo;
 import com.jkkc.travel.config.Config;
 import com.jkkc.travel.db.NewsHelper;
 import com.jkkc.travel.http.UpdateAppHttpUtil;
+import com.jkkc.travel.listento1a.GuideSpeak;
 import com.jkkc.travel.listento1a.ScenicSpotsOnActivity;
 import com.jkkc.travel.utils.Constant;
 import com.jkkc.travel.utils.EncryptUntils;
@@ -1473,7 +1474,7 @@ public class HomeActivity extends AppCompatActivity {
 
             case R.id.mivInterpretationSpot:
 
-                startActivity(new Intent(getApplicationContext(), ScenicSpotsOnActivity.class));
+                startActivity(new Intent(getApplicationContext(), GuideSpeak.class));
                 break;
 
             case R.id.mivAddressBook:
