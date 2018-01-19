@@ -142,6 +142,8 @@ public class HomeActivity extends AppCompatActivity {
 
 
     private String mLocalVersionName;
+    private SweetAlertDialog callTheRollDialog;
+    private TextView tvUserName1;
 
     /**
      * 获取当前程序的版本号
@@ -219,13 +221,61 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-
-
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
+
+        tvUserName1 = (TextView) findViewById(R.id.tvUserName1);
+        tvUserName1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), EditNameActivity.class));
+                finish();
+
+                return false;
+            }
+
+        });
+
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        if (!TextUtils.isEmpty(name)){
+            tvUserName1.setText(name);
+        }
+
         //初始化天气图标
         initMap();
+
+        Button btnCallTheRoll = (Button) findViewById(R.id.btnCallTheRoll);
+        btnCallTheRoll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callTheRollDialog = new SweetAlertDialog(HomeActivity.this,
+                        SweetAlertDialog.PROGRESS_TYPE);
+
+                callTheRollDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+                callTheRollDialog.setTitleText("正在点名...");
+                callTheRollDialog.setCancelable(true);
+                callTheRollDialog.show();
+
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        callTheRollDialog.cancel();
+                        startActivity(new Intent(getApplicationContext(),
+                                CallTheRollActivity.class));
+
+
+                    }
+                }, 3000);
+
+
+            }
+        });
 
 
         //显示当地当前日期，星期几，时间
@@ -1320,6 +1370,17 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (callTheRollDialog == null) {
+            return;
+        }
+        callTheRollDialog.cancel();
+
+    }
+
+    @Override
     public void onBackPressed() {
 
         recreate();
@@ -1499,7 +1560,6 @@ public class HomeActivity extends AppCompatActivity {
                             .show();
 
                 }
-
 
 
                 break;

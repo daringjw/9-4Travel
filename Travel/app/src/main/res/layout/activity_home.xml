@@ -13,9 +13,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
+
+    <TextView
+        android:id="@+id/tvUserName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:text="用户名"
+        android:textColor="#000"/>
+
+
+    <Button
+        android:id="@+id/btnCallTheRoll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvTemperature"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:layout_toEndOf="@+id/tvDate"
+        android:layout_toRightOf="@+id/tvDate"
+        android:text="点名"/>
 
     <ImageView
         android:id="@+id/ivWeatherIcon"
@@ -144,7 +165,6 @@
         android:src="@mipmap/wifi_hotspot"/>
 
     <Button
-        android:visibility="gone"
         android:id="@+id/tvUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -152,32 +172,32 @@
         android:background="@null"
         android:text="登录"
         android:textSize="20sp"
+        android:visibility="gone"
         />
 
     <TextView
-        android:visibility="gone"
         android:id="@+id/tvMsgCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/tvUserName"/>
+        android:layout_below="@id/tvUserName"
+        android:visibility="gone"/>
 
     <TextView
-        android:visibility="gone"
         android:id="@+id/tvBeiJing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/tvUserName"
         android:layout_marginRight="10dp"
-
         android:text="北京时间"
+
         android:textColor="#098bd7"
-        android:textSize="10sp"/>
+        android:textSize="10sp"
+        android:visibility="gone"/>
 
 
     <TextView
-        android:visibility="gone"
         android:id="@+id/tvBeiJingTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -186,10 +206,10 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
         android:text="15:26"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:visibility="gone"/>
 
     <TextView
-        android:visibility="gone"
         android:id="@+id/tvBeiJingDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -198,7 +218,8 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
         android:text="2017.9.5 星期二"
-        android:textSize="10sp"/>
+        android:textSize="10sp"
+        android:visibility="gone"/>
 
 
 </RelativeLayout>

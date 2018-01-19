@@ -138,13 +138,13 @@
 
 
     <application
-        tools:replace="icon,label,theme"
         android:name=".global.DemoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/travel_round"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="icon,label,theme">
 
         <!-- 设置环信应用的AppKey -->
         <!-- <meta-data
@@ -215,14 +215,23 @@
         </activity>
 
 
-
         <activity
             android:name=".UI.HomeActivity"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
             ></activity>
 
+        <activity
+            android:name=".UI.CallTheRollActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            ></activity>
 
+        <activity
+            android:name=".UI.EditNameActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            ></activity>
 
 
         <activity
